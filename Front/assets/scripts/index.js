@@ -1,4 +1,4 @@
-var result = null; // 存储用户测验数据
+﻿var result = null; // 存储用户测验数据
 
 $(document).ready(function(){
 
@@ -163,19 +163,51 @@ function resizeVideo() {
 }
 
 function sendResult() {
+	var configType = config.type.toLowerCase()
+	var url = configType + "://" + config.ip + ":" + config.port + "/" + config.path;
+	if (configType == "ws" 
+		|| configType == "wss") {
+		sendResultByWs(url)
+	} else if (configType == "http"
+		|| configType == "https") {
+		sendResultByAjax(url)
+	} else {
+		alert("不支持相关类型： " + config.type)
+	}
+}
+
+function sendResultByAjax(url) {
+	var progress = new Progress($(".panel"));
+	progress.showProgress("正在保存数据， 请稍等！")
+	$.ajax({
+		url: url,
+		type: "POST",
+		data: JSON.stringify(result),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(data) {
+			progress.hideProgress()
+			alert(data.data)
+		},
+		error: function(xhr, status, msg) {
+			progress.hideProgress()
+			alert('保存数据失败！')
+		}
+	})
+}
+
+function sendResultByWs(url) {
 
 	var websocket;
 
 	var progress = new Progress($(".panel"));
 	if ('WebSocket' in window) {
-		websocket = new WebSocket(config.url);
+		websocket = new WebSocket(url);
 
 		progress.showProgress("正在保存数据， 请稍等！")
 		websocket.onopen = function(){
 			var data = JSON.stringify(result)
-			websocket.send(data)
-			console.log(config.url)
-			console.log(data)			
+			websocket.send(data)		
 		}
 
 		websocket.onmessage = function(e) {

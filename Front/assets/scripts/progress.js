@@ -1,4 +1,4 @@
-function Progress(container) {
+﻿function Progress(container) {
 
 	this.container = container;
 

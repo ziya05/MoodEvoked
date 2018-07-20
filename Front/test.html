@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head> 
 		<meta charset="utf-8" />
@@ -22,15 +22,7 @@
 						data: []
 					}
 
-					var websocket = getWebSocket()
-					websocket.onopen = function(){
-						console.log("hi")		
-
-						websocket.send(JSON.stringify(data))
-						//websocket.close()
-						alert("发完了")			
-					}
-
+					sendByWebSocket(JSON.stringify(data))
 					
 				})
 
@@ -41,9 +33,41 @@
 						user: {
 							text: text
 						},
-						data: []
+						data: [{
+							name: 'happy',
+							val: 1
+						}, {
+							name: 'sad',
+							val: 2
+						}]
 					}
 
+					//sendByWebSocket(data)
+					sendByAjax(data)
+
+				})
+			})
+
+			// ajax方式， 后端需支持跨域
+			function sendByAjax(data) {
+
+				console.log(data)
+				$.ajax({
+					url: "http://localhost:8080/mood/save",
+					type: "POST",
+					data: JSON.stringify(data),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function(data) {
+						alert(data)
+					},
+					error: function(xhr, status, msg) {
+						alert(msg)
+					}
+				})
+			}
+
+			function sendByWebSocket(data) {
 					var websocket = getWebSocket()
 
 					websocket.onopen = function(){
@@ -53,13 +77,11 @@
 						//websocket.close()
 						alert("发完了")			
 					}
-
-				})
-			})
+			}
 
 			function getWebSocket() {
 				//var url = "ws://192.168.3.2:8080/mood"
-				var url = "ws://localhost:8080/mood"
+				var url = "ws://localhost:8080/mood/save"
 
 				var websocket = new WebSocket(url);
 				

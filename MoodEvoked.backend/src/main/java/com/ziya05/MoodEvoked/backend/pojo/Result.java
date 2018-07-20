@@ -24,5 +24,10 @@ public class Result {
 		this.data = data;
 	}
 	
-	
+	public void print() {
+		System.out.println("用户名：" + this.user.getText());
+		for(Item item : this.getData()) {
+			System.out.println(item.getName() + ":" + item.getVal());
+		}
+	}
 }

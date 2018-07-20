@@ -1,3 +1,6 @@
-var config = {
-	url: 'ws://localhost:8080/mood'
+﻿var config = {
+	ip: 'localhost',
+	port: 8080,
+	path: 'mood/save',
+	type: 'ws',  // ws, http, wss, https
 }

@@ -1,4 +1,4 @@
-* {
+﻿* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -30,8 +30,8 @@ input {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 90%;
-	height: 90%;
+	width: 95%;
+	height: 95%;
 	padding: 30px;
 	display: none;
 	outline: none;
@@ -40,20 +40,20 @@ input {
 	display: block;
 }
 .title {
-	height: 100px;
+	height: 80px;
 	font-size: 18px;
 }
 .content {
 	position: relative;
-	height: calc(100% - 100px);
+	height: calc(100% - 80px);
 	text-align: center;
-	font-size: 24px;
+	font-size: 20px;
 	color: #fff;
 }
 .user-num-text {
 	padding: 0 20px;
 	width: 300px;
-	height: 50px;
+	height: 40px;
 	border: 0;
 	border-radius: 30px;
 	font-size: 18px;
@@ -67,20 +67,25 @@ input {
 }
 .btn-next {
 	width: 160px;
-	height: 50px;
+	height: 40px;
 	border-radius: 30px;
 	border: 0;
 	cursor: pointer;
+}
+.btn-next:hover {
+	background-color: #f00;
+	transform: translateY(-3px);
 }
 .video {
 
 }
 .option-row {
     text-align: left;
-    height: 50px;
+    height: 35px;
     border-radius: 30px;
     padding: 0 20px;
-    line-height: 2;
+    line-height: 1.8;
+    font-size: 18px;
 }
 .option-row:hover {
 	background: linear-gradient(to bottom, #888 0%, #333 50%, #888 100%);
