@@ -1,0 +1,131 @@
+var contentArr = [
+{
+	type: 1,
+	video: {
+		src : "中性1.mp4"
+	}
+},
+{
+	type: 1,
+	video: {
+		src : "喜悦.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'happy',
+	options: [{
+		id: 1,
+		text: "很高兴"
+	},{
+		id: 2,
+		text: "高兴"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+},
+{
+	type: 1,
+	video: {
+		src : "中性2.mp4"
+	}
+},
+{
+	type: 1,
+	video: {
+		src : "恐惧.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'fear',
+	options: [{
+		id: 1,
+		text: "很害怕"
+	},{
+		id: 2,
+		text: "害怕"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+},
+{
+	type: 1,
+	video: {
+		src : "中性3.mp4"
+	}
+},
+{
+	type: 1,
+	video: {
+		src : "愤怒.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'angry',
+	options: [{
+		id: 1,
+		text: "很生气"
+	},{
+		id: 2,
+		text: "生气"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+},
+{
+	type: 1,
+	video: {
+		src : "中性4.mp4"
+	}
+},
+{
+	type: 1,
+	video: {
+		src : "悲伤.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'sad',
+	options: [{
+		id: 1,
+		text: "很悲伤"
+	},{
+		id: 2,
+		text: "悲伤"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+},
+{
+	type: 1,
+	video: {
+		src : "中性5.mp4"
+	}
+},
+{
+	type: 1,
+	video: {
+		src : "厌恶.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'disgust',
+	options: [{
+		id: 1,
+		text: "很厌恶"
+	},{
+		id: 2,
+		text: "厌恶"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+}];

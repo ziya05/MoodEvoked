@@ -1,0 +1,21 @@
+var contentArr = [
+{
+	type: 1,
+	video: {
+		src : "喜悦.mp4"
+	}
+},
+{
+	type: 2,
+	name: 'happy',
+	options: [{
+		id: 1,
+		text: "很高兴"
+	},{
+		id: 2,
+		text: "高兴"
+	}, {
+		id: 3,
+		text: "平静"
+	}]
+}];
